@@ -1,0 +1,45 @@
+{{!< default}}
+
+<div class="home-page">
+  {{> jumbotron }}
+
+  {{> social-links }}
+
+  <div class="posts">
+    <div class="container">
+      <h2 class="posts-header">Events, articles, and tutorials from the community</h2>
+      <section class="events">
+        {{#get "posts" limit="8" filter="tags:events"}}
+          {{#if posts}}
+            <h3 class="section-header"><span><a href="/tag/events">Recent events</a></span></h3>
+            <div class="row">
+              {{> posts-list }}
+            </div>
+          {{/if}}
+        {{/get}}
+      </section>
+
+      <section class="articles">
+        {{#get "posts" limit="8" filter="tags:articles"}}
+          {{#if posts}}
+            <h3 class="section-header"><span><a href="/tag/articles">Recent articles</a></span></h3>
+            <div class="row">
+              {{> posts-list }}
+            </div>
+          {{/if}}
+        {{/get}}
+      </section>
+
+      <section class="tutorials">
+        {{#get "posts" limit="8" filter="tags:tutorials"}}
+          {{#if posts}}
+            <h3 class="section-header"><span><a href="/tag/tutorials">Recent tutorials</a></span></h3>
+            <div class="row">
+              {{> posts-list }}
+            </div>
+          {{/if}}
+        {{/get}}
+      </section>
+    </div>
+  </div>
+</div>

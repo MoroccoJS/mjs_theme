@@ -1,0 +1,10 @@
+var riot = require('riot')
+var newsLetterController = require('./controllers/newsLetterController')
+var homeController = require('./controllers/homeController')
+var postController = require('./controllers/postController')
+var utilsMixin = require('./mixins/utilsMixin')
+var configMixin = require('./mixins/configMixin')
+var tags = require('./tags/all')
+var router = require('./router')
+
+riot.mount('navigation')

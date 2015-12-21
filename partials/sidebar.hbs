@@ -1,0 +1,13 @@
+<aside class="sidebar">
+  <div class="sidebar-header">
+    {{#is "post"}}
+      {{#author}}
+        <div class="author-info">
+          <a class="author-image" href="{{ url }}"><img src="{{ image }}"></a>
+          <h3 class="author-name"><a href="{{ url }}">{{ name }}</a></h3>
+          <p class="author-bio">{{ bio }}</p>
+        </div>
+      {{/author}}
+    {{/is}}
+  </div>
+</aside>

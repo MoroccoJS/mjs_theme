@@ -1,0 +1,223 @@
+#main[riot-tag=home],
+#main .home-page {
+
+  .jumbotron {
+    height: 350px;
+    background: #0E2F56;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+
+    h1 {
+      line-height: 80px;
+      font-size: 46px;
+
+      span {
+        color: #F8DC3D;
+        display: inline-block;
+        width: 200px;
+        text-align: left;
+
+        @keyframes "blink" {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: #fff;
+          }
+        }
+
+        &.is-waiting:after {
+          animation: blink .8s infinite;
+          content: '|';
+        }
+
+        &.is-typing:after {
+          animation: none;
+          content: '|';
+          color: #fff;
+        }
+      }
+    }
+
+    .call-to-action {
+      white-space: nowrap;
+      width: 630px;
+      margin: 60px auto 0;
+
+      .join-link, input[type=submit] {
+        padding: 0 15px;
+        font-size: 16px;
+        text-transform: none;
+        width: 40%;
+        height: 50px;
+        float: right;
+        border: none;
+        background: #118DF0;
+        color: #fff;
+        font-weight: normal;
+        margin: 0;
+        border-radius: 0;
+        transition: background .25s ease;
+
+        &:hover {
+          background: #0D7BD3;
+        }
+
+        &.join-link {
+          box-shadow: 0 2px 0 rgba(0, 0, 0, .5);
+          width: 170px;
+          border-radius: 4px;
+          padding: 5px 30px;
+        }
+      }
+
+      form {
+        width: 450px;
+        margin-bottom: 0;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, .5);
+        float: left;
+
+        input[type=email] {
+          border: none;
+          margin: 0;
+          float: left;
+          width: 60%;
+          height: 50px;
+          border-radius: 0;
+          color: #222;
+          font-size: 16px;
+        }
+
+        input[type=submit] {
+
+          &[disabled] {
+            background: #999;
+            cursor: not-allowed;
+          }
+
+          &.error {
+            background: #F33535;
+          }
+
+          &.success {
+            background: #48BC55;
+          }
+        }
+      }
+    }
+
+  }
+
+  .social-links {
+    display: block;
+    background: #118DF0;
+    height: 60px;
+  }
+
+  .posts {
+    padding-top: 50px;
+
+    .posts-header {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #999;
+    }
+
+    section {
+      margin-bottom: 50px;
+
+      .section-header {
+        margin-bottom: 50px;
+        font-size: 28px;
+        text-align: center;
+        overflow: hidden;
+
+        span {
+          position: relative;
+
+          a {
+            text-decoration: none;
+            color: #3a3a3a;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          &::after, &::before {
+            content: '';
+            border-top: 1px solid rgba(0, 0, 0, .1);
+            width: 100px;
+            position: absolute;
+            width: 600px;
+            top: 50%;
+          }
+
+          &::before {
+            right: 100%;
+            margin-right: 30px;
+          }
+
+          &::after {
+            left: 100%;
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+
+    .post {
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      margin-bottom: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      border-top: none;
+
+      &:nth-child(4n+1) {
+        margin-left: 0;
+        clear: left;
+      }
+
+      .post-image {
+        display: block;
+        font-size: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .post-info {
+        padding: 4px 8px;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+
+        .title {
+          font-size: 16px;
+          margin: 0;
+          font-family: Lato-Bold;
+
+          a {
+            text-decoration: none;
+            color: #3a3a3a;
+            letter-spacing: normal;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

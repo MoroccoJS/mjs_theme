@@ -1,0 +1,73 @@
+#main[riot-tag=post],
+#main .post-page {
+
+  .mjs-container {
+    display: flex;
+    flex-direction: row;
+
+    .post-section {
+      flex: 1;
+      background: #fff;
+      max-width: ~"calc(100% - 340px)";
+
+      .post-meta {
+        width: ~"calc(100% - 200px)";
+        height: 180px;
+        background: #118DF0;
+        color: #fff;
+        padding: 10px 100px 10px 100px;
+
+        .post-title {
+          font-size: 54px;
+          font-family: Lato-Bold;
+          letter-spacing: normal;
+        }
+      }
+
+      .post-content {
+        padding: 40px 100px;
+        color: #3a3a3a;
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        p {
+          font-size: 18px;
+
+          code {
+            color: #FF304F;
+          }
+        }
+
+        pre {
+          margin: 40px -101px 50px;
+
+          code {
+            padding: 40px 100px;
+            border-radius: 0;
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+
+        img {
+          max-width: 100%;
+          box-shadow: 0 0 8px 0px #bebebe;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 2px;
+          display: block;
+        }
+      }
+
+      .post-comments {
+        padding: 0 100px 20px;
+      }
+    }
+  }
+}

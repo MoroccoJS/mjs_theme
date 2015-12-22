@@ -1,5 +1,6 @@
 var riot = require('riot')
 var request = require('superagent')
+var moment = require('moment')
 
 var loadDisqus = function(url, title, identifier) {
 
@@ -12,8 +13,7 @@ var loadDisqus = function(url, title, identifier) {
 
     var d = document
     var s = d.createElement('script')
-    if (window.location.host == 'moroccojs.org') s.src = '//moroccojs.disqus.com/embed.js'
-    else s.src = '//moroccojs-dev.disqus.com/embed.js'
+    s.src = '//moroccojs.disqus.com/embed.js'
     ;(d.head || d.body).appendChild(s)
   } else {
     DISQUS.reset({
@@ -41,8 +41,18 @@ var postController = {
         hljs.initHighlighting()
         loadDisqus(`${window.location.origin}/${self.post.slug}`, self.post.title, self.post.slug)
         self.update()
+        addthis.layers.refresh()
         document.querySelector('#main').style.opacity = 1
       })
+  },
+
+  renderDate: function(date) {
+    return moment(date).fromNow()
+  },
+
+  otherTags: function(tags) {
+    var t = tags.slice(1, tags.length)
+    return t
   }
 }
 

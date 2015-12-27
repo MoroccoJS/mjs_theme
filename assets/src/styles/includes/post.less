@@ -8,7 +8,10 @@
     .post-section {
       flex: 1;
       background: #fff;
-      max-width: ~"calc(100% - 340px)";
+
+      @media (min-width: 1200px) {
+        max-width: ~"calc(100% - 340px)";
+      }
 
       .post-meta {
         width: ~"calc(100% - 200px)";

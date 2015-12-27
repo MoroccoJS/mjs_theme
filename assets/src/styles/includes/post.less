@@ -14,20 +14,28 @@
       }
 
       .post-meta {
-        width: ~"calc(100% - 200px)";
         height: 180px;
         background: #118DF0;
         color: #fff;
-        padding: 10px 100px 10px 100px;
+        padding: 10px 20px;
         position: relative;
         display: flex;
         align-items: center;
 
+        @media (min-width: 1200px) {
+          padding: 10px 100px 10px 100px;
+          width: ~"calc(100% - 200px)";
+        }
+
         .post-title {
-          font-size: 54px;
+          font-size: 34px;
           font-family: Lato-Bold;
           letter-spacing: normal;
           margin-top: -35px;
+
+          @media (min-width: 1200px) {
+            font-size: 54px;
+          }
         }
 
         .post-info {
@@ -37,9 +45,14 @@
           bottom: 0;
           left: 0;
           background: rgba(255, 255, 255, .05);
-          width: ~"calc(100% - 105px)";
-          padding: 5px 5px 5px 100px;
+          padding: 5px 20px;
           height: 35px;
+          width: ~"calc(100% - 40px)";
+
+          @media (min-width: 1200px) {
+            width: ~"calc(100% - 105px)";
+            padding: 5px 5px 5px 100px;
+          }
 
           li {
             display: inline-block;
@@ -61,14 +74,23 @@
             &.share-buttons {
               float: right;
               margin: 0 0 -5px;
+              display: none;
+
+              @media (min-width: 1200px) {
+                display: inline-block;
+              }
             }
           }
         }
       }
 
       .post-content {
-        padding: 40px 100px;
+        padding: 40px 20px;
         color: #3a3a3a;
+
+        @media (min-width: 1200px) {
+          padding: 40px 100px;
+        }
 
         a {
           text-decoration: none;
@@ -87,13 +109,21 @@
         }
 
         pre {
-          margin: 40px -101px 50px;
+          margin: 40px -20px 50px;
+
+          @media (min-width: 1200px) {
+            margin: 40px -101px 50px;
+          }
 
           code {
-            padding: 40px 100px;
+            padding: 40px 20px;
             border-radius: 0;
             margin-left: 0;
             margin-right: 0;
+
+            @media (min-width: 1200px) {
+              padding: 40px 100px;
+            }
           }
         }
 
@@ -108,7 +138,11 @@
       }
 
       .post-comments {
-        padding: 0 100px 20px;
+        padding: 0 20px;
+
+        @media (min-width: 1200px) {
+          padding: 0 100px 20px;
+        }
       }
     }
   }

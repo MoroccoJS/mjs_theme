@@ -17,8 +17,12 @@ header {
   navigation {
     float: right;
     height: 60px;
-    display: flex;
+    display: none;
     align-items: center;
+
+    @media (min-width: 1200px) {
+      display: flex;
+    }
 
     ul {
       margin: 0;
